@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary: #1e293b;
+  --secondary-hover: #334155;
+  --accent: #8b5cf6;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  --input-bg: #0f172a;
+  --input-border: #334155;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --radius: 0.5rem;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 gap-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-foreground border border-card-border hover:bg-secondary-hover;
+  }
+
+  .card {
+    @apply bg-card-bg border border-card-border rounded-lg p-6 shadow-sm;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 bg-input-bg border border-input-border rounded-lg text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-slate-400 mb-2;
+  }
+}
